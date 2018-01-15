@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "DEX Pagelet Dev",
+  "description": "This extension will aide in debugging common issues with dex pagelets",
+  "version": "0.1",
+  "minimum_chrome_version": "45",
+
+  "devtools_page": "devtools.html",
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "all_frames": true,
+    "js": ["content_script.js"]
+  }],
+
+  "permissions": ["tabs"],
+
+  "web_accessible_resources": ["*.js"]
+}
